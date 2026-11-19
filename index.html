@@ -19,11 +19,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Organization","name":"Cognitive AI","url":"https://dakotabota.github.io/cognitive-ai/","logo":"https://dakotabota.github.io/cognitive-ai/assets/favicon.svg","sameAs":["https://github.com/Dakotabota/cognitive-ai","https://www.npmjs.com/package/@jcrandall541/cogai"]},
- {"@type":"SoftwareApplication","name":"Cognitive AI","applicationCategory":"DeveloperApplication","operatingSystem":"Linux, macOS","offers":{"@type":"Offer","price":"9.00","priceCurrency":"USD"},"description":"Durable cross-session memory and harness-enforced capture hooks for AI coding agents.","softwareVersion":"0.3"},
+ {"@type":"SoftwareApplication","name":"Cognitive AI","applicationCategory":"DeveloperApplication","operatingSystem":"Linux, macOS","offers":{"@type":"Offer","price":"9.99","priceCurrency":"USD"},"description":"Durable cross-session memory and harness-enforced capture hooks for AI coding agents.","softwareVersion":"0.3"},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"What does Cognitive AI do?","acceptedAnswer":{"@type":"Answer","text":"It gives AI coding agents durable cross-session memory backed by your own private GitHub repo, plus harness-enforced hooks that make agents capture their work instead of just promising to."}},
   {"@type":"Question","name":"Which agents does it work with?","acceptedAnswer":{"@type":"Answer","text":"Claude Code, Cursor, Codex, Aider, Cline, and Windsurf — one CLI and the same memory store for all of them."}},
-  {"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"$9 per month, license-key gated. Local development mode is available via COGAI_DEV=1."}},
+  {"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"$9.99 per month, license-key gated. Local development mode is available via COGAI_DEV=1."}},
   {"@type":"Question","name":"Where is my memory stored?","acceptedAnswer":{"@type":"Answer","text":"In a private GitHub repo you own. Cognitive AI verifies the remote is private and refuses to push memory to anything public. Local disk is the working cache and offline fallback."}},
   {"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. The memory store lives on your machine and syncs to GitHub when available."}},
   {"@type":"Question","name":"How is it licensed?","acceptedAnswer":{"@type":"Answer","text":"BSL 1.1. See the LICENSE file in the repository."}}
@@ -87,12 +87,20 @@
   nav{max-width:820px;margin:0 auto 18px;display:flex;gap:18px;font-size:13px;color:var(--dim)}
   nav a{border-bottom:0;color:var(--dim)}
   nav a:hover{color:var(--fg)}
+  nav a{border-bottom:0;color:var(--dim)}
+  .sub{display:flex;gap:10px;max-width:560px;flex-wrap:wrap}
+  .sub input{flex:1;min-width:220px;background:#000;border:1px solid rgba(255,255,255,.18);border-radius:8px;color:#fff;padding:12px 14px;font:inherit}
+  .sub .subbtn{background:#fff;color:#000;border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:600;cursor:pointer}
+  .sub .subbtn:hover{box-shadow:0 0 10px rgba(255,255,255,.25)}
+  .fine{color:var(--dimmer);font-size:12px;margin:8px 0 0}
+  .sub-banner{border:1px solid rgba(255,255,255,.25);background:#0a0a0a;border-radius:8px;padding:14px 16px;margin:0 0 18px;font-size:14px}
+  .lic{word-break:break-all;padding:2px 8px}
   @media (max-width:560px){.frame{padding:34px 20px}}
   @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-<nav><a href="#features">features</a><a href="#how">how it works</a><a href="#faq">faq</a><a href="https://www.npmjs.com/package/@jcrandall541/cogai">npm ↗</a><a href="https://github.com/Dakotabota/cognitive-ai">github ↗</a></nav>
+<nav><a href="#features">features</a><a href="#how">how it works</a><a href="#price">license</a><a href="#faq">faq</a><a href="https://www.npmjs.com/package/@jcrandall541/cogai">npm ↗</a><a href="https://github.com/Dakotabota/cognitive-ai">github ↗</a></nav>
 
 <main class="frame">
   <h1 class="glow">cognitive-ai</h1>
@@ -124,10 +132,19 @@
 
   <hr />
 
+  <h2 id="price">Get your license</h2>
+  <form class="sub" method="GET" action="https://64-44-31-111.sslip.io/cogai-billing/checkout">
+    <input type="email" name="email" required placeholder="you@company.com" aria-label="Email address" />
+    <button class="subbtn" type="submit">Subscribe · $9.99/mo</button>
+  </form>
+  <p class="fine">Secure checkout via Stripe. Cancel anytime — your license stays in your account after signup.</p>
+
+  <hr />
+
   <h2 id="faq">FAQ</h2>
   <details open><summary>What does Cognitive AI do?</summary><p>Cross-session memory backed by your private GitHub repo, plus harness-enforced hooks so agents actually capture their work.</p></details>
   <details><summary>Which agents does it support?</summary><p>Claude Code, Cursor, Codex, Aider, Cline, and Windsurf — one CLI and the same store for all.</p></details>
-  <details><summary>What does it cost?</summary><p>$9/month, license-key gated. Local dev mode: <code>COGAI_DEV=1</code>.</p></details>
+  <details><summary>What does it cost?</summary><p>$9.99/month, license-key gated. Local dev mode: <code>COGAI_DEV=1</code>.</p></details>
   <details><summary>Where does my memory live?</summary><p>In a private repo you own. Sync to public remotes is refused by design.</p></details>
   <details><summary>Does it work offline?</summary><p>Yes — local store first, syncs when a network is available.</p></details>
   <details><summary>License?</summary><p>BSL 1.1 — see LICENSE in the repo.</p></details>
@@ -135,7 +152,7 @@
   <div class="meta">
     <a href="https://github.com/Dakotabota/cognitive-ai">github</a>
     <a href="https://www.npmjs.com/package/@jcrandall541/cogai">npm</a>
-    <span>$9 / month — license-key gated</span>
+    <span>$9.99 / month — license-key gated</span>
   </div>
   <div class="footnote">© cognitive-ai — GitHub-primary · local-cached · fully offline-capable · BSL 1.1</div>
 </main>
@@ -153,6 +170,35 @@
       setTimeout(function(){b.textContent=old},900);
     });
   }
+})();
+</script>
+<script>
+(function(){
+  var m=location.search.match(/[?&]checkout=(cs_[A-Za-z0-9]+)/);
+  if(!m) return;
+  var banner=document.createElement("div");
+  banner.className="sub-banner";
+  banner.textContent="Confirming your license\u2026";
+  var main=document.querySelector("main");
+  main.insertBefore(banner, main.firstChild);
+  fetch("https://64-44-31-111.sslip.io/cogai-billing/license?session_id="+encodeURIComponent(m[1]))
+    .then(function(r){return r.json()})
+    .then(function(j){
+      if(j&&j.license_key){
+        banner.textContent="";
+        var b=document.createElement("div");b.textContent="License activated:";
+        var c=document.createElement("code");c.className="lic";c.textContent=j.license_key;
+        var p=document.createElement("p");p.style.margin="6px 0 0";
+        var pc=document.createElement("code");pc.textContent="cognitive-ai license "+j.license_key;
+        p.appendChild(pc);
+        var btn=document.createElement("button");btn.className="btn";btn.textContent="copy key";
+        btn.addEventListener("click",function(){ if(navigator.clipboard){navigator.clipboard.writeText(j.license_key);} btn.textContent="copied"; setTimeout(function(){btn.textContent="copy key"},900); });
+        banner.appendChild(b);banner.appendChild(c);banner.appendChild(p);banner.appendChild(btn);
+      } else {
+        banner.textContent="Payment pending \u2014 your license activates within a minute. Refresh this page in a moment.";
+      }
+    })
+    .catch(function(){ banner.textContent="Could not confirm license automatically. Keep your checkout confirmation email."; });
 })();
 </script>
 </body>
